@@ -37,5 +37,5 @@ func main() {
 		logger.GetZapLogger().Errorf(err.Error())
 	}
 
-	defer rep.Close()
+	defer rep.Close()//qwert
 }
