@@ -63,7 +63,9 @@ pipeline{
         }
 	stage('Telegramtest'){
 		steps{
-			telegramSend(message: 'Hello World', chatId:-1001286106118)
+			script{
+				telegramSend 'Hello World'
+			}
 		}
 	}
         
