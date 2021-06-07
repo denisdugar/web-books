@@ -61,6 +61,11 @@ pipeline{
                     -Dsonar.login=152586db3d5196613a9564c034e24465864bc549"""
             }
         }
+	stage('Telegramtest'){
+		steps{
+			telegramSend(message: 'Hello World', chatId:-1001286106118)
+		}
+	}
         
     }
 }
