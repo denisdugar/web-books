@@ -70,4 +70,10 @@ pipeline{
 	}
         
     }
+	post{
+		always{
+			echo 'Hello!'
+			emailtext body: subject: "Jenkins build"
+			}
+	}
 }
