@@ -4,12 +4,12 @@ WORKDIR $GOPATH/src/github/denisdugar/web-books
 
 ADD . .
 
-#RUN apt-get update && apt-get install -y apt-transport-https
-#RUN apt install -y build-essential
+RUN apt-get update && apt install -y build-essential
 
 RUN go get -d -v ./...
 RUN go install -v ./...
 
-EXPOSE 8081
+EXPOSE 8080
 
-CMD go build
+RUN go build
+CMD ./go-webapp-sample
