@@ -1,3 +1,4 @@
+withCredentials([usernamePassword(credentialsId: 'github-login')]){
 properties([pipelineTriggers([githubPush()])])
 
 node {git url: 'https://github.com/denisdugar/web-books', branch: 'main'}
@@ -78,4 +79,5 @@ post{
 		to: 'testdenisdugar@gmail.com'
 		}
 	}
+}
 }
