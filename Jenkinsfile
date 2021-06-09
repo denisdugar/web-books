@@ -73,7 +73,7 @@ pipeline{
 	post{
 		always{
 			echo 'Hello!'
-			emailtext body: subject: "Jenkins build"
+			emailext body: subject: "Jenkins build"
 			}
 	}
 }
