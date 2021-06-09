@@ -69,11 +69,12 @@ pipeline{
 		}
 	}
         
-    }
-	post{
-		always{
-			echo 'Hello!'
-			emailext body: subject: "Jenkins build"
-			}
+}
+post{
+	always{
+		echo 'Hello!'
+		emailext body: subject: "Jenkins build"
+		}
 	}
+}
 }
