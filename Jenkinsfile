@@ -1,6 +1,6 @@
 properties([pipelineTriggers([githubPush()])])
 
-node {git url: 'https://github.com/denisdugar/web-books', branch: 'main'}
+node {git url: 'https://denisdugar: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@github.com/denisdugar/web-books', branch: 'main'}
 
 pipeline{
     agent any
@@ -19,7 +19,7 @@ pipeline{
         stage('checkout'){
             
             steps{
-                checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://denisdugar:254693178521Dd@github.com/denisdugar/web-books']]])
+                checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://denisdugar: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@github.com/denisdugar/web-books']]])
             }
         }
         
