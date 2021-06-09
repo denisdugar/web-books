@@ -1,6 +1,6 @@
 properties([pipelineTriggers([githubPush()])])
 
-node {git url: 'https://denisdugar:254693178521Dd@github.com/denisdugar/web-books', branch: 'main'}
+node {git url: 'https://github.com/denisdugar/web-books', branch: 'main'}
 
 pipeline{
     agent any
@@ -64,8 +64,8 @@ pipeline{
 post{
 	always{
 		echo 'Hello!'
-		emailext body: 'Test message',
-		subject: 'Test subject',
+		emailext body: "${currentBuild.currentResult}",
+		subject: 'Jenkins',
 		to: 'testdenisdugar@gmail.com'
 		}
 	}
