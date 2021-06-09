@@ -73,7 +73,9 @@ pipeline{
 post{
 	always{
 		echo 'Hello!'
-		emailext body: subject: "Jenkins build"
+		emailext body: 'Test message',
+		subject: 'Test subject',
+		to: 'denisdugar@gmail.com'
 		}
 	}
 }
