@@ -75,7 +75,7 @@ post{
 		echo 'Hello!'
 		emailext body: 'Test message',
 		subject: 'Test subject',
-		to: 'denisdugar@gmail.com'
+		to: 'testdenisdugar@gmail.com'
 		}
 	}
 }
