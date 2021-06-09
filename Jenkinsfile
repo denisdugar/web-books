@@ -14,7 +14,6 @@ pipeline{
         dockerImage = ''
         GO111MODULE = 'on'
     }
-    withCredentials([usernamePassword(credentialsId: 'github-login')]){
     stages{
         
         stage('checkout'){
@@ -61,7 +60,6 @@ pipeline{
                     -Dsonar.login=152586db3d5196613a9564c034e24465864bc549"""
             }
         }
-}        
 }
 post{
 	always{
