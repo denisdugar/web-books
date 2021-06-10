@@ -9,7 +9,7 @@ import (
 	"github.com/ybkuroki/go-webapp-sample/mycontext"
 	"github.com/ybkuroki/go-webapp-sample/repository"
 	"github.com/ybkuroki/go-webapp-sample/router"
-)
+)//test
 
 func main() {
 	e := echo.New()
