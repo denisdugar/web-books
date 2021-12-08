@@ -1,15 +1,6 @@
-FROM golang:latest
-
-WORKDIR $GOPATH/src/github/denisdugar/web-books
-
-ADD . .
-
-RUN apt-get update && apt install -y build-essential
-
-RUN go get -d -v ./...
-RUN go install -v ./...
-
-EXPOSE 8080
-
-RUN go build
-CMD ./go-webapp-sample
+FROM jenkins/jenkins
+ENV JAVA_OPTS -Djenkins.install.runSetupWizard=false
+ENV CASC_JENKINS_CONFIG /var/jenkins_home/casc.yaml
+COPY plugins.txt /usr/share/jenkins/ref/plugins.txt
+RUN /usr/local/bin/install-plugins.sh < /usr/share/jenkins/ref/plugins.txt
+COPY user.yaml /var/jenkins_home/user.yaml
